@@ -2,7 +2,8 @@
 * "query" JavaScript CSS Selector Engine
 * Copyright (c) 2012 tanwei
 * Version: 1.0
-* Blog: http://home.cnblogs.com/weishao/
+* Download: http://tanwei-cc.github.com/query/
+* Blog: http://www.cnblogs.com/weishao/
 * Date:2012/10/14
 */
 (function (win) {
