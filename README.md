@@ -11,7 +11,7 @@ query Javascript CSS Selector engine
 
 <h2>联系作者</h2>
     欢迎大家使用，并提出问题或改进，相信有你们的参与将使query越来越完美，谢谢。   
-    email:tabwei_yx@126.com
+    email:tanwei_yx@126.com
     blog:http://home.cnblogs.com/weishao/
 
 <h2>选择器</h2>
