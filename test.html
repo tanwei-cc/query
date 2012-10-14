@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>query JavaScript Selector Engine</title>    
+    <style type="text/css">
+        body,div,p { padding: 0; margin: 0; }             
+        ol,ul { list-style: none; }
+        h1,h2,h3,h4,h5,h6 {font-size: 100%; }
+        p {text-indent:2em;line-height: 1.4em; }
+        hr {border: 0;height: 1px;}    
+        .clear{clear:both;}       
+            
+        #wrapper{padding:5px;}    
+        #nav{width:150px;float:left;list-style-type:circle;}                
+        .red{border:1px solid red;}
+        .green{border:1px solid green;}
+        .blue{border:1px solid blue;}        
+        .black{border:1px solid black;}
+        .silver{border:1px solid silver;}
+        
+        div.selectors ul{width:200px;float:left;}
+    </style>    
+</head>
+<body>
+    <div id="wrapper">                            
+        <div class="black">            
+            <h2>概述</h2>
+            <p>query是一个javascript css选择器引擎，小巧而功能强大，压缩后2k左右，可以很轻松的集成到代码当中。</p>               
+            <hr />
+            <h2>支持浏览器</h2>
+            <p>IE6+、Firefox、Chrome、Safari、Opera</p>
+            <h2>选择器</h2>
+            <div class="selectors">
+                <ul> 
+                    <li><b>query(selector[,context])</b></li>                   
+                    <li>div</li>
+                    <li>#intro</li>
+                    <li>div#intro</li>                    
+                    <li>.red</li>                
+                    <li>span.red</li>
+                    <li>[name]</li> 
+                    <li>[name=keywords]</li>          
+                    <li>input[name]</li>                
+                    <li>input[name=keywords]</li>
+                    <li>input[name='keywords']</li>
+                    <li>input[name="keywords"]</li>                
+                    <li>input[name*=key]</li>
+                    <li>label[class~=red]</li>
+                    <li>#nav>li</li>
+                    <li>#nav> li</li>
+                    <li>#nav >li</li>
+                    <li>#nav > li</li>
+                    <li>#nav li</li>
+                    <li>#intro,.red,div</li>
+                    <li>input[name],#nav>li</li>
+                </ul>
+                <ul style="width:400px">                               
+                    <li>query.getById(id)</li>
+                    <li>query.getByName(name)</li>
+                    <li>query.getByTagName(tagName[, parent])</li>
+                    <li>query.getByClass(className[, parent][, tagName])
+    <pre>  Example:
+    query.getByClass("red");
+    </pre>                    
+                    </li>
+                    <li>query.getByAttr(name, val[, parent][, tagName])
+    <pre>  Example:
+    query.getByAttr("name","keywords",parent,"input");
+    </pre>  
+                    </li>                                      
+                    <li>query.extend
+    <pre>  Example:
+    query.extend({                       
+        getByCity:function(){...}
+    });
+    var city=query.getByCity();
+    </pre>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+
+                <b>测试</b>    
+                <select class="selectors">   
+                    <optgroup label="ID">        
+                        <option>#intro</option>
+                        <option>div#intro</option>                
+                    </optgroup>              
+                    <optgroup label="CLASS">
+                        <option>.red</option>                
+                        <option>span.red</option>
+                    </optgroup>
+                    <optgroup label="TAG">        
+                        <option>input</option>                
+                    </optgroup>
+                    <optgroup label="ATTRIBUTE">                
+                        <option>[name]</option> 
+                        <option>[name=keywords]</option>          
+                        <option>input[name]</option>                
+                        <option>input[name=keywords]</option>
+                        <option>input[name='keywords']</option>
+                        <option>input[name="keywords"]</option>                
+                        <option>input[name*=key]</option>
+                        <option>label[class~=red]</option>
+                    </optgroup>  
+                    <optgroup label="CHILDS">
+                        <option>#nav>li</option>
+                        <option>#nav> li</option>
+                        <option>#nav >li</option>
+                        <option>#nav > li</option>                
+                    </optgroup>
+                    <optgroup label="GROUP">
+                        <option>#nav li</option>
+                        <option>#intro,.red,input</option>
+                        <option>input[name],#nav>li</option>
+                    </optgroup>               
+                </select>
+                <input type="button" value="test" onclick="test()" />
+                <!--<input type="button" value="test all" onclick="testAll()" />-->
+                <hr />
+            </div>
+        </div><hr />  
+        <div id="tabs">
+            <span class="red">span.red</span>
+            <span class="blue">span.blue</span>
+            <span class="green">span.green</span>                        
+            <label class="red">label.red</label>            
+            <label class="blue">label.blue</label>
+            <label class="green">label.green</label>
+            <label class="red">label.red</label>            
+            <label class="blue">label.blue</label>
+            <label class="green">label.green</label>
+        </div>        
+        <div class="black">
+            <div id="intro" style="text-align:center" class="black">                
+                <p>div#intro测试数据，query是一个纯javascript选择器引擎，小巧而功能强大，压缩后2k，可以很轻松的集成到javascript library中。</p> 
+            </div>  
+                      
+            <ul id="nav">
+                <li>#nav li</li>
+                <li><a href="#@">科技创新</a>
+                    <ul>
+                        <li>科技</li>
+                        <li>科技创新</li>
+                    </ul>
+                </li>
+                <li><a href="#@">新闻财经</a>
+                    <ul>
+                        <li>新闻</li>
+                        <li>财经</li>
+                    </ul>
+                </li>
+                <li><a href="#@">娱乐八卦</a></li>             
+                <li><a href="#@">购物分享</a></li>
+            </ul>
+            <ul>
+                <li>input</li>
+                <li>
+                    <input type="text" name="key" value="name=key"/><br />
+                    <input type="text" name="key" value="name=key"/><br />
+                    <input type="text" name="keywords" value="name=keywords" /><br />
+                    <input type="text" name="keywords" value="name=keywords" /><br />
+                    <input type="text" name="keywords222" value="name=keywords222"/><br />
+                    <input type="text" name="keywords222" value="name=keywords222"/>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>                                  
+    </div>
+</body>
+<script type="text/javascript" src="query1.0.min.js"></script>
+<!--<script type="text/javascript" src="test.js"></script>-->
+<script type="text/javascript">
+    function test() {
+        var selct = query("select.selectors");
+        var selector = selct.options[selct.selectedIndex].innerText || selct.options[selct.selectedIndex].value;
+        var obj = query(selector);
+        if (!obj) return;
+
+        var msg = "";
+        if (obj.nodeType) {
+            msg = obj.outerHTML;
+        }
+        else {
+            var i=0,l = obj.length;
+            msg += "elements length:" + l + "\n";
+            msg += "--------------------------------------------------------------------------------\n";
+            for (; i < l; i++) {
+                msg += obj[i].outerHTML + "\n";
+            }
+        }
+
+        alert(msg);
+    }
+
+//    function testAll() {
+//        var selct = query("select.selectors");
+//        for (var i = 0, l = selct.length; i < l; i++) {
+//            queryLog(selct.options[i].innerText || selct.options[i].value);
+//        }
+//        runLog();
+//    }
+</script>
+</html>
