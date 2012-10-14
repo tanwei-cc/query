@@ -7,7 +7,7 @@ query Javascript CSS Selector engine
     IE6+、Firefox、Chrome、Safari、Opera
 
 <h2>联系作者</h2>
-    欢迎大家使用，并提出问题或改进，相信有你们的参与我会更加努力做出更多实用的东西，谢谢。   
+    欢迎大家使用，有问题或有什么建议可以告诉，相信有你们的参与我会更加努力做出更多实用的东西，谢谢。   
     email:tanwei_yx@126.com
     blog:http://home.cnblogs.com/weishao/
 
