@@ -20,7 +20,7 @@
         if (isDOMQuery)
             res = context.querySelectorAll(selector);
         else {
-            var splits = selector.split(',');
+            //var splits = selector.split(',');
             _each(selector.split(','), function (s) {
                 res = res.concat(_filters(s, context));
             });
