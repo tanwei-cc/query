@@ -160,7 +160,7 @@
         //if (doc.getElementsByClassName)
         //  return _get(parent).getElementsByClassName(className);        
         if (isDOMQuery)
-            _get(parent).querySelectorAll((tag || "") + "." + className);
+            return _get(parent).querySelectorAll((tag || "") + "." + className);
         return _getByAttr("class", className, parent, tag, '~');
     };
 
